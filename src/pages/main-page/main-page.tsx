@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import './main-page.scss';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
-import { Layout, Button, Menu, Typography, Space } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
+import { Layout, Button, Menu, Space } from 'antd';
+const { Footer, Sider, Content } = Layout;
 import {
     CalendarOutlined,
-    ContainerOutlined,
     HeartFilled ,
     MenuFoldOutlined,
     MenuUnfoldOutlined,
-    ProfileOutlined,
+    LogoutOutlined,
     IdcardOutlined,
+    TrophyFilled
   } from '@ant-design/icons';
 import { JSX } from 'react/jsx-runtime';
-import logoFit from '../../img/fit.svg';
-import logoClever from '../../img/clever.svg';
+import logoFit from '@public/fit.svg';
+import logoClever from '@public/clever.svg';
+
+import { Header } from '@components/header';
 
 
 export const MainPage: React.FC = () => {
@@ -33,7 +35,7 @@ export const MainPage: React.FC = () => {
     const items = [
         getItem('Календарь', '1', <CalendarOutlined />),
         getItem('Тренировки', '2', <HeartFilled />),
-        getItem('Достижения', '3', <ContainerOutlined />),
+        getItem('Достижения', '3', <TrophyFilled />),
         getItem('Профиль', '4', <IdcardOutlined />),
       ];
 
@@ -72,7 +74,7 @@ export const MainPage: React.FC = () => {
                         style={{ width: "208px" }}
                         items={[ {
                             key: '10',
-                            icon: <ProfileOutlined />,
+                            icon: <LogoutOutlined />,
                             label: 'Выход',
                         },]}
                     />
@@ -80,20 +82,9 @@ export const MainPage: React.FC = () => {
                 </div>
 
             </Sider>
-            <Layout>
-                <Header className='header' style={{ background:"#f0f5ff" }}>
-                      <Typography.Text>
-                        Главная
-                      </Typography.Text>
-                      <div className="flex">
-                        <Typography.Text>
-                            Приветствуем тебя в CleverFit — приложении, которое поможет тебе добиться своей мечты!
-                        </Typography.Text>
-                        <Button>Настройки</Button>
-                      </div>
-
-                </Header>
-                <Content className=''>
+            <Layout style={{ width:'1000px' }}>
+                <Header></Header>
+                <Content className='main'>
                     <Button
                     type="primary"
                     onClick={toggleCollapsed}
