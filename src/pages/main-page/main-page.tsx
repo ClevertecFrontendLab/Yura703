@@ -17,6 +17,7 @@ import logoFit from '@public/fit.svg';
 import logoClever from '@public/clever.svg';
 
 import { Header } from '@components/header';
+import { MainContent } from '@components/main-content';
 
 
 export const MainPage: React.FC = () => {
@@ -85,6 +86,7 @@ export const MainPage: React.FC = () => {
             <Layout style={{ width:'1000px' }}>
                 <Header></Header>
                 <Content className='main'>
+                    <MainContent></MainContent>
                     <Button
                     type="primary"
                     onClick={toggleCollapsed}
