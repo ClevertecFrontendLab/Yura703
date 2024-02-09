@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './main-page.scss';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import { Layout, Button, Menu, Space } from 'antd';
-const { Footer, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 import {
     CalendarOutlined,
     HeartFilled ,
@@ -18,6 +18,7 @@ import logoClever from '@public/clever.svg';
 
 import { Header } from '@components/header';
 import { MainContent } from '@components/main-content';
+import { Footer } from '@components/footer';
 
 
 export const MainPage: React.FC = () => {

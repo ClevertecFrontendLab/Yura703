@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    height: 283px;
+
+    &__btn {
+        margin-bottom: 52px;
+        margin-left: 39px;
+        height: 40px;
+        width: 171px;
+    }
+
+    &__card {
+        margin-bottom: 42px;
+        margin-right: 24px;
+        border-radius: 2px;
+        width: 240px;
+        height: 127px;
+    }
+
+    .footer-card-fone {
+        display: flex;
+    }
+
+    .ant-card-body {
+        padding: 0;
+    }
+}
