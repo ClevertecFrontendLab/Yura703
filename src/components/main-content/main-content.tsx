@@ -1,11 +1,10 @@
 import React from 'react';
 import './main-content.scss';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
-import { Card, Col, Row, Button, Grid } from 'antd';
+import { Card, Button } from 'antd';
 import Icon, { IdcardOutlined, HeartFilled } from '@ant-design/icons';
 import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
 
-const { useBreakpoint } = Grid;
 
 const CalendarSvg = () => (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,8 +17,6 @@ const CalendarIcon = (props: Partial<CustomIconComponentProps>) => (
 
 
 export const MainContent: React.FC = () => {
-    const screenMore992 = useBreakpoint().lg;
-    const screenMore768 = useBreakpoint().md;
 
     return (
         <div className='main-content'>

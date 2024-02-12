@@ -29,16 +29,20 @@
     }
 
     &__card-title {
+        margin-top: 12px ;
+        margin-bottom: 8px;
         @include text-main-1;
         color: $primary-light-6;
     }
 
     &__card-text {
+        margin-bottom: 12px;
         @include text-sider-menu;
         color: $character-light-secondary-45;
     }
 
     .footer-card-fone {
+        margin: 12px 0px;
         display: flex;
 
         button {
@@ -49,5 +53,33 @@
 
     .ant-card-body {
         padding: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer {
+        height: calc(364px + 42px);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        flex-direction: column-reverse;
+        height: calc(212px + 42px);
+
+        &__btn {
+            margin: 24px 16px 42px;
+            height: 40px;
+            width: calc(100% - 32px);
+        }
+
+        &__card {
+            margin: 0px 16px;
+            width: calc(100% - 32px);
+        }
+
+        .footer-card-fone {
+            display: block;
+        }
     }
 }

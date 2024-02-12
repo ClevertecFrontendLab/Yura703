@@ -69,12 +69,13 @@
         .ant-card-head {
             height: 66px;
         }
-        //max-width: 182px;
-        //width: 100%;
     }
 }
 
 @media (max-width: 767px) {
+    .main-content{
+        margin: 16px;
+    }
     .cards-btns {
         flex-direction: column;
         .cards-btn {
@@ -85,5 +86,4 @@
             }
         }
     }
-
 }
