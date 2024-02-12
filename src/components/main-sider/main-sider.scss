@@ -1,6 +1,10 @@
 @import '@constants/style/var';
 @import '@constants/style/mixins';
 
+.main-sider {
+    position: relative;
+}
+
 .sider {
     max-width: 208px;
     height: 1024px;
@@ -69,3 +73,38 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .main-sider {
+        position: absolute;
+        z-index: 10;
+    }
+    .anticon.ant-menu-item-icon {
+        display: none;
+    }
+    .sider-btn {
+        top: 24px;
+        z-index: -1;
+    }
+    .sider {
+        max-width: 106px;
+        height: 640px;
+    }
+    .sider-logo {
+        width: 72px;
+        height: 18px;
+        margin: 16px 17px;
+    }
+    .sider-menu {
+        height: 192px;
+    }
+    li.ant-menu-item {
+        padding: 0 !important;
+    }
+    .sider-exit {
+        margin-top: 342px;
+        .ant-menu-title-content {
+            margin-left: 34px !important;
+        }
+    }
+  }

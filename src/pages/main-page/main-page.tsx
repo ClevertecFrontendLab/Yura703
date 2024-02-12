@@ -12,7 +12,7 @@ export const MainPage: React.FC = () => {
     return (
         <Layout className='flex'>
             <MainSider></MainSider>
-            <Layout style={{ width:'1000px' }}>
+            <Layout>
                 <Header></Header>
                 <div className='main-bg'>
                     <Content className='main'>

@@ -30,7 +30,7 @@ const CalendarIcon = (props: Partial<CustomIconComponentProps>) => (
   );
 
 export const MainSider: React.FC = () => {
-
+    const [width, _setWidth] = useState(window.innerWidth);
     const [collapsed, setCollapsed] = useState(false);
 
     function getItem(label: string, key: string, icon: JSX.Element) {
@@ -51,13 +51,13 @@ export const MainSider: React.FC = () => {
       ];
 
     return (
-        <div style={{position: "relative"}}>
+        <div className='main-sider'>
             <Sider
             theme='light'
             className='sider'
-            width={208}
+            width={width>800 ?  208 : 106}
             collapsible={false}
-            collapsedWidth={64}
+            collapsedWidth={width>800 ?  64 : 0}
             collapsed={collapsed}
             >
             <div className="sider-logo">
@@ -76,16 +76,17 @@ export const MainSider: React.FC = () => {
                         inlineIndent={240}
                         theme='light'
                         items={items}
-                        style={ collapsed ? { width: "64px" } : { width: "208px" }}
+                        style={ collapsed ? { width: "64px" } : width>800 ? { width: "208px" } : { width: "106px" }}
                     />
                 </Space>
                 <Space size={100} direction='vertical' align='center' >
                 <Menu
+                    className='sider-exit'
                     defaultSelectedKeys={['1']}
                     defaultOpenKeys={['sub1']}
                     inlineIndent={240}
                     theme='light'
-                    style={ collapsed ? { width: "64px" } : { width: "208px" }}
+                    style={ collapsed ? { width: "64px" } : width>800 ? { width: "208px" } : { width: "106px" }}
                     items={[ {
                         key: '10',
                         icon: <IconFont type="icon-tuichu" rotate={180} />,
