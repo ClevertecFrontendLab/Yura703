@@ -1,4 +1,3 @@
-
 #root {
     max-width: 1440px;
     width: 1440px;
@@ -21,42 +20,10 @@ li {
     border: 1px solid black;
 }
 
-.sider {
-    max-width: 208px;
-    width: 208px !important;
-    height: 100vh;
-}
-
-.sider-logo {
-    width: 133px;
-    height: 33px;
-    margin: 44px 46px 67px 29px;
-
-    &__clever {
-        width: calc((97.76 / 133 * 100%));
-    }
-    &__fit {
-        width: calc((33.83 / 133 * 100%));
-    }
-}
-
-.sider-menu {
-    height: calc(100vh - 144px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .main {
     background: no-repeat center/cover;
     background-image: url('@public/bg-mp-light.jpg');
 }
-
-// .sider-menu {
-//     display: flex;
-//     flex-direction: column;
-// }
 
 .flex {
     display: flex;

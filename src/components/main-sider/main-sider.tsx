@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './main-page.scss';
+import './main-sider.scss';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import { Button, Layout, Menu, Space } from 'antd';
 const { Sider } = Layout;
@@ -51,52 +51,60 @@ export const MainSider: React.FC = () => {
       ];
 
     return (
-        <>
-        <Sider
-        theme='light'
-        className='sider'
-        width={208}
-        collapsible={false}
-        collapsedWidth={64}
-        collapsed={collapsed}
-        >
-        <div className="sider-logo">
-            <img src={logoClever} alt="clever" className='sider-logo__clever' />
-            <img src={logoFit} alt="fit" className='sider-logo__fit' />
-        </div>
-        <div className="sider-menu">
-            <Space size={100} direction='vertical' align='center' >
+        <div style={{position: "relative"}}>
+            <Sider
+            theme='light'
+            className='sider'
+            width={208}
+            collapsible={false}
+            collapsedWidth={64}
+            collapsed={collapsed}
+            >
+            <div className="sider-logo">
+                { collapsed
+                ?  <img src={logoFit} alt="fit" className='sider-logo__short' />
+                : <>
+                    <img src={logoClever} alt="clever" className='sider-logo__clever' />
+                    <img src={logoFit} alt="fit" className='sider-logo__fit' />
+                </>}
+            </div>
+            <div className="sider-menu">
+                <Space size={100} direction='vertical' align='center' >
+                    <Menu
+                        defaultSelectedKeys={['1']}
+                        defaultOpenKeys={['sub1']}
+                        inlineIndent={240}
+                        theme='light'
+                        items={items}
+                        style={ collapsed ? { width: "64px" } : { width: "208px" }}
+                    />
+                </Space>
+                <Space size={100} direction='vertical' align='center' >
                 <Menu
                     defaultSelectedKeys={['1']}
                     defaultOpenKeys={['sub1']}
                     inlineIndent={240}
                     theme='light'
-                    items={items}
-                    style={{ width: "208px" }}
+                    style={ collapsed ? { width: "64px" } : { width: "208px" }}
+                    items={[ {
+                        key: '10',
+                        icon: <IconFont type="icon-tuichu" rotate={180} />,
+                        label: 'Выход',
+                    },]}
                 />
-            </Space>
-            <Space size={100} direction='vertical' align='center' >
-            <Menu
-                defaultSelectedKeys={['1']}
-                defaultOpenKeys={['sub1']}
-                inlineIndent={240}
-                theme='light'
-                style={{ width: "208px" }}
-                items={[ {
-                    key: '10',
-                    icon: <IconFont type="icon-tuichu" rotate={180} />,
-                    label: 'Выход',
-                },]}
-            />
-            </Space>
-        </div>
-    </Sider>
-    <Button
-    type="primary"
-    onClick={toggleCollapsed}
-    >
-        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-    </Button>
-    </>
+                </Space>
+            </div>
+        </Sider>
+        <Button
+        style={{padding: 0, border: 0}}
+        type="default"
+        onClick={toggleCollapsed}
+        className='sider-btn'
+        >
+            <div className="sider-btn-icon">
+                {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            </div>
+        </Button>
+    </div>
     );
 };

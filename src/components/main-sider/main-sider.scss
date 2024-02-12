@@ -1,0 +1,71 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.sider {
+    max-width: 208px;
+    height: 1024px;
+}
+
+.sider-logo {
+    height: 33px;
+    margin: 44px 46px 67px 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__clever {
+        width: calc((97.76 / 133 * 100%));
+    }
+    &__fit {
+        width: calc((33.83 / 133 * 100%));
+    }
+    &__short {
+        width: 33px;
+    }
+}
+
+.sider-menu {
+    height: calc(1024px - 144px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sider-btn {
+    position: absolute;
+    top: 490px;
+    right: -20px;
+    height: 40px;
+    width: 20px;
+
+    .sider-btn-icon {
+        position: relative;
+        background-color: $character-light-primary-inverse;
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 14px;
+        }
+
+        &::before {
+            border-color: $character-light-primary-inverse transparent transparent transparent;
+            left: -14px;
+            top: 10px;
+            transform: rotate(160deg);
+        }
+
+        &::after {
+            border-color: transparent transparent transparent $character-light-primary-inverse;
+            right: 0px;
+            transform: rotate(115deg);
+            right: 5px;
+            top: -15px;
+        }
+    }
+}
