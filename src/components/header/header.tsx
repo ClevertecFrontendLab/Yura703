@@ -1,13 +1,13 @@
 import './header.scss';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
-import { Button, Typography } from 'antd';
+import { Button, Typography, Grid } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+
+const { useBreakpoint } = Grid;
 
 export const Header: React.FC = () => {
-    const [width, _setWidth] = useState(window.innerWidth);
-
-
+    const screenMore992 = useBreakpoint().lg;
+    const screenMore768 = useBreakpoint().md;
 
     return (
         <header className='header' >
@@ -15,10 +15,13 @@ export const Header: React.FC = () => {
                 Главная
             </Typography.Text>
             <div className="header-content">
-                <Typography.Title level={1}  style={{ fontWeight: 700 }}>
+                <Typography.Title level={1}  style={ screenMore992 ? { fontWeight: 700 } : { fontWeight: 500 }}>
                     Приветствуем тебя в CleverFit — приложении,<br/> которое поможет тебе добиться своей мечты!
                 </Typography.Title>
-                <Button type='text' icon={<SettingOutlined />}>Настройки</Button>
+                <Button type='text'
+                    icon={ (screenMore992 || !screenMore768 ) && <SettingOutlined /> }>
+                        { screenMore768 ? "Настройки" : ''}
+                </Button>
             </div>
         </header>
     );

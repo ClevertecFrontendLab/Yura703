@@ -27,6 +27,12 @@
     line-height: 130%;
   }
 
+  @mixin text-heading-tablet{
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 130%;
+  }
 
 
   @mixin tablet {
