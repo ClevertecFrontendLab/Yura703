@@ -20,13 +20,12 @@ li {
     border: 1px solid black;
 }
 
-.main {
-    background: no-repeat center/cover;
-    background-image: url('@public/bg-mp-light.jpg');
-}
-
 .flex {
     display: flex;
 }
 
+.main-bg {
+    background: no-repeat center/cover;
+    background-image: url('@public/bg-mp-light.jpg');
+}
 

@@ -14,10 +14,12 @@ export const MainPage: React.FC = () => {
             <MainSider></MainSider>
             <Layout style={{ width:'1000px' }}>
                 <Header></Header>
-                <Content className='main'>
-                    <MainContent></MainContent>
-                </Content>
-                <Footer></Footer>
+                <div className='main-bg'>
+                    <Content className='main'>
+                        <MainContent></MainContent>
+                    </Content>
+                    <Footer></Footer>
+                </div>
             </Layout>
         </Layout>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import './footer.scss';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import { Card, Button } from 'antd';
-import { AndroidOutlined, AppleOutlined, HeartOutlined } from '@ant-design/icons';
+import { AndroidFilled, AppleFilled } from '@ant-design/icons';
 
 export const Footer: React.FC = () => {
 
@@ -13,8 +13,8 @@ export const Footer: React.FC = () => {
                 <p className='footer__card-title'>Скачать на телефон</p>
                 <p className='footer__card-text'>Доступно в PRO-тарифе</p>
                 <div className='footer-card-fone'>
-                    <Button type='text' icon={<AndroidOutlined />}>Android OS</Button>
-                    <Button type='text' icon={<AppleOutlined />}>Apple iOS</Button>
+                    <Button type='text' icon={<AndroidFilled />}>Android OS</Button>
+                    <Button type='text' icon={<AppleFilled />}>Apple iOS</Button>
                 </div>
             </Card>
         </div>
