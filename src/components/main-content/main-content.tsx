@@ -1,9 +1,11 @@
 import React from 'react';
 import './main-content.scss';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
-import { Card, Col, Row, Button } from 'antd';
+import { Card, Col, Row, Button, Grid } from 'antd';
 import Icon, { IdcardOutlined, HeartFilled } from '@ant-design/icons';
 import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
+
+const { useBreakpoint } = Grid;
 
 const CalendarSvg = () => (
     <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,6 +18,8 @@ const CalendarIcon = (props: Partial<CustomIconComponentProps>) => (
 
 
 export const MainContent: React.FC = () => {
+    const screenMore992 = useBreakpoint().lg;
+    const screenMore768 = useBreakpoint().md;
 
     return (
         <div className='main-content'>
@@ -27,25 +31,19 @@ export const MainContent: React.FC = () => {
                 <p>— выполнять расписанные тренировки для разных частей тела, следуя подробным инструкциям и советам профессиональных тренеров.</p>
             </Card>
             <Card bordered={false} className='main-text2'>
-                <p>CleverFit — это не просто приложение, а твой личный помощник<br/>в мире фитнеса. Не откладывай на завтра — начни тренироваться<br/>уже сегодня!</p>
+                <p>CleverFit — это не просто приложение, а твой личный помощник в мире фитнеса. Не откладывай на завтра — начни тренироваться уже сегодня!</p>
             </Card>
-            <Row gutter={64}>
-                <Col span={8}>
-                    <Card title="Расписать тренировки" bordered={false} style={{ width: 240 }} className='cards-btn'>
-                        <Button type='text' icon={<HeartFilled />}>Тренировки</Button>
-                    </Card>
-                </Col>
-                <Col span={8}>
-                    <Card title="Назначить календарь" bordered={false} style={{ width: 240 }} className='cards-btn'>
-                        <Button type='text' icon={<CalendarIcon/>}>Календарь</Button>
-                    </Card>
-                </Col>
-                <Col span={8}>
-                    <Card title="Заполнить профиль" bordered={false} style={{ width: 240 }} className='cards-btn'>
-                        <Button type='text' icon={<IdcardOutlined />}>Профиль</Button>
-                    </Card>
-                </Col>
-            </Row>
+            <div className='cards-btns'>
+                <Card title="Расписать тренировки" bordered={false} className='cards-btn'>
+                    <Button type='text' icon={<HeartFilled />}>Тренировки</Button>
+                </Card>
+                <Card title="Назначить календарь" bordered={false} className='cards-btn'>
+                    <Button type='text' icon={<CalendarIcon/>}>Календарь</Button>
+                </Card>
+                <Card title="Заполнить профиль" bordered={false} className='cards-btn'>
+                    <Button type='text' icon={<IdcardOutlined />}>Профиль</Button>
+                </Card>
+            </div>
         </div>
     );
 };

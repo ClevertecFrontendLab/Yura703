@@ -27,7 +27,6 @@
             margin: 0;
             padding-top: 4px;
             color: $character-light-title-85;
-            font-size: 2.57vw;
         }
 
         button {
@@ -35,6 +34,13 @@
         }
     }
 }
+
+@media (max-width: 1300px){
+    .header .header-content h1 {
+        @include text-heading-tablet;
+    }
+}
+
 @media (max-width: 991px) {
     .header .header-content h1 {
         max-width: 473px;
