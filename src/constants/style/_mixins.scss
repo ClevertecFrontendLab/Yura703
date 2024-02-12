@@ -1,0 +1,43 @@
+@mixin text-sider-menu{
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  @mixin heading-1{
+    font-family: var(--font-family);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 130%;
+    color: $character-light-title-85;
+  }
+
+  @mixin text-main-1{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  @mixin text-main-2{
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+
+
+
+  @mixin tablet {
+    @media (max-width: $tablet-width) {
+      @content;
+    }
+  }
+
+  @mixin mobile {
+    @media (max-width: $mobile-width) {
+      @content;
+    }
+  }
+

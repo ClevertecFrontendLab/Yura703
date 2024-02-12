@@ -1,3 +1,6 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
 .header {
     background: #f0f5ff;
     max-width: 1232px;
@@ -10,6 +13,7 @@
         justify-content: space-between;
         height: 110px;
         max-width: 1184px;
+        @include heading-1;
     }
 
 

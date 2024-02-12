@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
                 Главная
             </Typography.Text>
             <div className="header-content">
-                <Typography.Title level={1}>
+                <Typography.Title level={1}  style={{ fontWeight: 700 }}>
                     Приветствуем тебя в CleverFit — приложении,<br/> которое поможет тебе добиться своей мечты!
                 </Typography.Title>
                 <Button type='text' icon={<SettingOutlined />}>Настройки</Button>

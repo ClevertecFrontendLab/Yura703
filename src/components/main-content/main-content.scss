@@ -1,14 +1,43 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
 .main-content {
     max-width: 752px;
     padding: 24px;
 
-    .main-text {
+    .main-text1 {
+        width: 752px;
+
+        p {
+            @include text-main-1;
+            color: $primary-light-9;
+            text-align: start;
+            margin: 0;
+        }
+    }
+
+    .main-text2 {
         width: 752px;
         margin: 24px 0 16px 0;
+
+        p {
+            @include text-main-2;
+            color: $character-light-title-85;
+            text-align: start;
+            margin: 0;
+        }
     }
 }
 
 .cards-btn {
+    @include text-main-1;
+    color: $character-light-title-85;
+
+    button {
+        @include text-sider-menu;
+        color: $primary-light-6;
+    }
+
     .ant-card-head {
         height: 45px;
     }
