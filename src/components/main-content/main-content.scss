@@ -34,7 +34,6 @@
 }
 
 .cards-btns {
-    max-width: 752px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -72,6 +71,13 @@
         }
     }
 }
+
+// @media (max-width: 834px) {
+//     .cards-btns {
+//         max-width: 561px;
+//     }
+// }
+
 
 @media (max-width: 767px) {
     .main-content{
