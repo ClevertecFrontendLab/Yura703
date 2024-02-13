@@ -1,5 +1,5 @@
 import './main-page.scss';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css';
 import { Layout } from 'antd';
 const { Content } = Layout;
 

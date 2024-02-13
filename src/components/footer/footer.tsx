@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer.scss';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css';
 import { Card, Button } from 'antd';
 import { AndroidFilled, AppleFilled } from '@ant-design/icons';
 

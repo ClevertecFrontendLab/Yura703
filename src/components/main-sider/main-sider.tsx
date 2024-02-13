@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './main-sider.scss';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
-import { Button, Layout, Menu, Space } from 'antd';
+import 'antd/dist/antd.css';
+import { Button, Grid, Layout, Menu, Space } from 'antd';
 const { Sider } = Layout;
 import Icon, {
     HeartFilled ,
@@ -15,6 +15,8 @@ import { JSX } from 'react/jsx-runtime';
 import logoFit from '@public/fit.svg';
 import logoClever from '@public/clever.svg';
 import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
+
+const { useBreakpoint } = Grid;
 
 const IconFont = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
@@ -30,8 +32,9 @@ const CalendarIcon = (props: Partial<CustomIconComponentProps>) => (
   );
 
 export const MainSider: React.FC = () => {
-    const [width, _setWidth] = useState(window.innerWidth);
     const [collapsed, setCollapsed] = useState(false);
+    const screenMore576 = useBreakpoint().xs;
+    const screenMore768 = useBreakpoint().md;
 
     function getItem(label: string, key: string, icon: JSX.Element) {
         return {
@@ -55,9 +58,9 @@ export const MainSider: React.FC = () => {
             <Sider
             theme='light'
             className='sider'
-            width={width>800 ?  208 : 106}
+            width={ screenMore768 ?  208 : 106 }
             collapsible={false}
-            collapsedWidth={width>800 ?  64 : 0}
+            collapsedWidth={ screenMore768 ?  64 : 0 }
             collapsed={collapsed}
             >
             <div className="sider-logo">
@@ -71,22 +74,18 @@ export const MainSider: React.FC = () => {
             <div className="sider-menu">
                 <Space size={100} direction='vertical' align='center' >
                     <Menu
-                        defaultSelectedKeys={['1']}
-                        defaultOpenKeys={['sub1']}
                         inlineIndent={240}
                         theme='light'
                         items={items}
-                        style={ collapsed ? { width: "64px" } : width>800 ? { width: "208px" } : { width: "106px" }}
+                        style={ collapsed ? { width: "64px" } : screenMore768 ? { width: "208px" } : { width: "106px" }}
                     />
                 </Space>
                 <Space size={100} direction='vertical' align='center' >
                 <Menu
                     className='sider-exit'
-                    defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['sub1']}
                     inlineIndent={240}
                     theme='light'
-                    style={ collapsed ? { width: "64px" } : width>800 ? { width: "208px" } : { width: "106px" }}
+                    style={ collapsed ? { width: "64px" } : screenMore768 ? { width: "208px" } : { width: "106px" }}
                     items={[ {
                         key: '10',
                         icon: <IconFont type="icon-tuichu" rotate={180} />,
@@ -97,14 +96,15 @@ export const MainSider: React.FC = () => {
             </div>
         </Sider>
         <Button
-        style={{padding: 0, border: 0}}
-        type="default"
-        onClick={toggleCollapsed}
-        className='sider-btn'
-        >
-            <div className="sider-btn-icon">
-                {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            </div>
+            data-test-id={ screenMore576 ? 'sider-switch-mobile' : 'sider-switch' }
+            style={{padding: 0, border: 0}}
+            type="default"
+            onClick={toggleCollapsed}
+            className='sider-btn'
+            >
+                <div className="sider-btn-icon">
+                    {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                </div>
         </Button>
     </div>
     );

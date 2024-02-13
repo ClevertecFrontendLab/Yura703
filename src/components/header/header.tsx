@@ -1,5 +1,5 @@
 import './header.scss';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css';
 import { Button, Typography, Grid } from 'antd';
 import { SettingOutlined } from '@ant-design/icons';
 

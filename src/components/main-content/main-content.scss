@@ -20,7 +20,8 @@
     .main-text2 {
         max-width: 752px;
         min-height: 126px;
-        margin: 24px 0 16px 0;
+        margin-top: 24px;
+        margin-bottom: 16px;
 
         p {
             @include text-main-2;

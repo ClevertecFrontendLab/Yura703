@@ -7,7 +7,7 @@
 
 .sider {
     max-width: 208px;
-    height: 1024px;
+    height: 100%;
 }
 
 .sider-logo {
@@ -29,12 +29,25 @@
 }
 
 .sider-menu {
-    height: calc(1024px - 144px);
+    height: calc(100% - 33px - 111px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    .anticon.ant-menu-item-icon {
+        color: $primary-light-9;
+    }
+
+    li.ant-menu-item {
+        margin-bottom: 19px !important;
+    }
 }
+
+.sider-exit li.ant-menu-item {
+    margin-bottom: 1px !important;
+}
+
 
 .sider-btn {
     position: absolute;
@@ -47,7 +60,7 @@
         position: relative;
         background-color: $character-light-primary-inverse;
 
-        &::before, &::after {
+        &:before, &:after {
             content: "";
             position: absolute;
             bottom: 0;
@@ -57,16 +70,15 @@
             border-width: 14px;
         }
 
-        &::before {
+        &:before {
             border-color: $character-light-primary-inverse transparent transparent transparent;
             left: -14px;
             top: 10px;
             transform: rotate(160deg);
         }
 
-        &::after {
+        &:after {
             border-color: transparent transparent transparent $character-light-primary-inverse;
-            right: 0px;
             transform: rotate(115deg);
             right: 5px;
             top: -15px;

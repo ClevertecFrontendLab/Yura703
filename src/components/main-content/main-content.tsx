@@ -1,6 +1,6 @@
 import React from 'react';
 import './main-content.scss';
-import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css';
 import { Card, Button } from 'antd';
 import Icon, { IdcardOutlined, HeartFilled } from '@ant-design/icons';
 import type { CustomIconComponentProps } from '@ant-design/icons/lib/components/Icon';
