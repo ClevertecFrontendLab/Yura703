@@ -1,0 +1,24 @@
+#root {
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+
+
+.wrapper {
+    background: rgb(229, 234, 215);
+    border: 1px solid black;
+}
+
+.flex {
+    display: flex;
+}
+
+.main-bg {
+    background: no-repeat center/cover;
+    background-image: url('@public/bg-mp-light.jpg');
+}
+

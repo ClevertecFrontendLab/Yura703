@@ -1,0 +1,122 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.main-sider {
+    position: relative;
+}
+
+.sider {
+    max-width: 208px;
+    height: 100%;
+}
+
+.sider-logo {
+    height: 33px;
+    margin: 44px 46px 67px 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__clever {
+        width: calc((97.76 / 133 * 100%));
+    }
+    &__fit {
+        width: calc((33.83 / 133 * 100%));
+    }
+    &__short {
+        width: 33px;
+    }
+}
+
+.sider-menu {
+    height: calc(100% - 33px - 111px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .anticon.ant-menu-item-icon {
+        color: $primary-light-9;
+    }
+
+    li.ant-menu-item {
+        margin-bottom: 19px !important;
+    }
+}
+
+.sider-exit li.ant-menu-item {
+    margin-bottom: 1px !important;
+}
+
+
+.sider-btn {
+    position: absolute;
+    top: 490px;
+    right: -20px;
+    height: 40px;
+    width: 20px;
+
+    .sider-btn-icon {
+        position: relative;
+        background-color: $character-light-primary-inverse;
+
+        &:before, &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 14px;
+        }
+
+        &:before {
+            border-color: $character-light-primary-inverse transparent transparent transparent;
+            left: -14px;
+            top: 10px;
+            transform: rotate(160deg);
+        }
+
+        &:after {
+            border-color: transparent transparent transparent $character-light-primary-inverse;
+            transform: rotate(115deg);
+            right: 5px;
+            top: -15px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .main-sider {
+        position: absolute;
+        z-index: 10;
+    }
+    .anticon.ant-menu-item-icon {
+        display: none;
+    }
+    .sider-btn {
+        top: 24px;
+        z-index: -1;
+    }
+    .sider {
+        max-width: 106px;
+        height: 640px;
+    }
+    .sider-logo {
+        width: 72px;
+        height: 18px;
+        margin: 16px 17px;
+    }
+    .sider-menu {
+        height: 192px;
+    }
+    li.ant-menu-item {
+        padding: 0 !important;
+    }
+    .sider-exit {
+        margin-top: 342px;
+        .ant-menu-title-content {
+            margin-left: 34px !important;
+        }
+    }
+  }

@@ -1,0 +1,89 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: calc(283px + 42px);
+
+    &__btn {
+        margin-bottom: 42px;
+        margin-left: 24px;
+        border-radius: 2px;
+        height: 40px;
+        width: 171px;
+        text-align: center;
+        @include text-main-1;
+        color: $primary-light-6;
+    }
+
+    &__card {
+        margin-bottom: 42px;
+        margin-right: 24px;
+        border-radius: 2px;
+        width: 240px;
+        height: 127px;
+        box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.02);
+        background: var($character-light-primary-inverse);
+    }
+
+    &__card-title {
+        margin-top: 12px ;
+        margin-bottom: 8px;
+        @include text-main-1;
+        color: $primary-light-6;
+
+    }
+
+    &__card-text {
+        margin-bottom: 12px;
+        @include text-sider-menu;
+        color: $character-light-secondary-45;
+    }
+
+    .footer-card-fone {
+        margin-top: 12px;
+        padding-top: 10px;
+        margin-bottom: 12px;
+        display: flex;
+        border-top: 0.1px solid rgb(244, 238, 238);
+
+        button {
+            @include text-sider-menu;
+            color: $character-light-title-85;
+        }
+    }
+
+    .ant-card-body {
+        padding: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .footer {
+        height: calc(364px + 42px);
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        flex-direction: column-reverse;
+        height: calc(212px + 42px);
+
+        &__btn {
+            margin: 24px 16px 42px;
+            height: 40px;
+            width: calc(100% - 32px);
+        }
+
+        &__card {
+            margin: 16px;
+            width: calc(100% - 32px);
+        }
+
+        .footer-card-fone {
+            display: block;
+        }
+    }
+}

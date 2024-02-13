@@ -1,0 +1,96 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.main-content {
+    max-width: 752px;
+    margin: 24px;
+
+    .main-text1 {
+        max-width: 752px;
+
+        p {
+            @include text-main-1;
+            color: $primary-light-9;
+            letter-spacing: 0.42px;
+            text-align: start;
+            margin: 0;
+        }
+    }
+
+    .main-text2 {
+        max-width: 752px;
+        min-height: 126px;
+        margin-top: 24px;
+        margin-bottom: 16px;
+
+        p {
+            @include text-main-2;
+            color: $character-light-title-85;
+            text-align: start;
+            margin: 0;
+            letter-spacing: 0.6px;
+        }
+    }
+}
+
+.cards-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    .cards-btn {
+        @include text-main-1;
+        color: $character-light-title-85;
+        width: 240px;
+
+        button {
+            @include text-sider-menu;
+            color: $primary-light-6;
+        }
+
+        .ant-card-head {
+            height: 45px;
+
+            .ant-card-head-title {
+                white-space: wrap;
+            }
+        }
+
+        .ant-card-body {
+            height: 56px;
+            padding: 12px;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .cards-btns .cards-btn {
+        .ant-card-head {
+            height: 66px;
+        }
+    }
+}
+
+// @media (max-width: 834px) {
+//     .cards-btns {
+//         max-width: 561px;
+//     }
+// }
+
+
+@media (max-width: 767px) {
+    .main-content{
+        margin: 16px;
+    }
+    .cards-btns {
+        flex-direction: column;
+        .cards-btn {
+            width: 100%;
+
+            .ant-card-head {
+                height: 45px;
+            }
+        }
+    }
+}
