@@ -1,0 +1,30 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.form {
+    width: 368px;
+    height: 380px;
+
+    .ant-radio-button-wrapper {
+        width: 50%;
+    }
+
+    .ant-form-item-control-input-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ant-radio-button-wrapper {
+        border: none;
+        border-bottom: 0.2px solid rgb(241, 235, 235);
+    }
+
+    .ant-radio-button-wrapper-checked {
+        border: none;
+        border-bottom: 2px solid $character-dark-link;
+    }
+
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before  {
+        background-color: white;
+    }
+}

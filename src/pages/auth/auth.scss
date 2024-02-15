@@ -1,0 +1,48 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.auth-window {
+    max-width: 1440px;
+    height: 100vh;
+    background-image: url('@public/bg/bg-auth-light.jpg');
+}
+
+.auth {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(121, 156, 212, 0.5);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form {
+    border: 1px solid green;
+    border-radius: 2px;
+    padding: 64px 32px;
+    width: 539px;
+    height: 742px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    background: $character-light-primary-inverse;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 0;
+
+
+    &__logo {
+        width: 309px;
+        height: 76px;
+        margin-top: 64px;
+        margin-bottom: 48px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+}

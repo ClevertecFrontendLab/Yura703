@@ -2,7 +2,7 @@ export const Paths = {
     MAIN: '/main',
 
     AUTH: '/auth',
-    REGISTRATION: '/auth/registration',
+    REGISTRATION: '/auth/registration',//TODO 'registration'
     CONFIRM_EMAIL: '/auth/confirm-email',
     CHANGE_PASSWORD: '/auth/change-password',
 
