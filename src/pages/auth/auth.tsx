@@ -1,8 +1,6 @@
 import 'antd/dist/antd.css';
 import './auth.scss';
 
-import { Form } from 'antd';
-import { FormComponentProps } from 'antd/lib/form/Form';
 import logo from '@public/logo.svg';
 import { AuthForm } from '@components/auth-form';
 
