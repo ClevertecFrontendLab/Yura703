@@ -8,6 +8,7 @@ import { PasswordRecovery } from "@pages/password-recovery";
 import { Error } from "@pages/error";
 import { RecoveryCode } from "@components/recovery-code";
 import { RecoveryAccount } from "@components/recovery-account";
+import { ErrorWindow } from "@components/error-window";
 
 export const routes = (
     <Routes>
@@ -34,12 +35,11 @@ export const routes = (
         <Route path={Paths.ERROR} element={<Error />} />
         <Route path={Paths.ERROR_EMAIL_NO_EXIST} element={<RecoveryCode />} />
         <Route path={Paths.ERROR_LOGIN} element={<RecoveryAccount />} />
+        <Route path={Paths.ERROR_USER_EXIST} element={<ErrorWindow />} />
         <Route path={Paths.RESULT} element={<MainPage />}>
             <Route path={Paths.SUCCESS} element={<MainPage />} />
             <Route path={Paths.SUCCESS_PASSWORD} element={<MainPage />} />
             <Route path={Paths.ERROR} element={<Error />} />
-            <Route path={Paths.ERROR_USER_EXIST} element={<MainPage />} />
-
             <Route path={Paths.ERROR_EMAIL_CHECK} element={<MainPage />} />
             <Route path={Paths.ERROR_PASSWORD} element={<PasswordRecovery />} />
 

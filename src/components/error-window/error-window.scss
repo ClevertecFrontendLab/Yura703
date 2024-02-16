@@ -1,0 +1,26 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.error-window {
+    border-radius: 2px;
+    padding: 64px 32px 56px 32px;
+    width: 539px;
+    height: 550px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    background: $character-light-primary-inverse;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        @include text-heading-tablet;
+        color: $character-light-title-85;
+    }
+
+    p {
+        @include text-sider-menu;
+        color: $character-light-secondary-45;
+    }
+}
+
