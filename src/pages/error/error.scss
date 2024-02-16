@@ -1,0 +1,14 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.error {
+    max-width: 1440px;
+    height: 100vh;
+    background-image: url('@public/bg/bg-auth-light.jpg');
+
+    &__wrapper {
+        @include bg-blur;
+    }
+}
+
+

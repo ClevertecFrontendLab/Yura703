@@ -1,0 +1,29 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.error-login {
+    width: 539px;
+    height: 345px;
+    padding: 64px 85px;
+    margin: 16px;
+    border-radius: 2px;
+    background: $character-light-primary-inverse;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+
+    h1 {
+        @include text-heading-tablet;
+        color: $character-light-title-85;
+    }
+
+    p {
+        @include text-sider-menu;
+        color: $character-light-secondary-45;
+    }
+}
+
+@media (max-width: 500px) {
+    .error-login {
+        height: 281px;
+        padding: 32px 16px;
+    }
+}

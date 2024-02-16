@@ -34,7 +34,6 @@
     line-height: 130%;
   }
 
-
   @mixin tablet {
     @media (max-width: $tablet-width) {
       @content;
@@ -45,5 +44,16 @@
     @media (max-width: $mobile-width) {
       @content;
     }
+  }
+
+  @mixin bg-blur {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(121, 156, 212, 0.5);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 

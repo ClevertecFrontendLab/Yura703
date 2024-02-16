@@ -5,6 +5,9 @@ import { NotFoundPage } from "@pages/not-found-page";
 import { MainPage } from "@pages/main-page";
 import { Auth } from "@pages/auth";
 import { PasswordRecovery } from "@pages/password-recovery";
+import { Error } from "@pages/error";
+import { RecoveryCode } from "@components/recovery-code";
+import { RecoveryAccount } from "@components/recovery-account";
 
 export const routes = (
     <Routes>
@@ -28,15 +31,18 @@ export const routes = (
             <Route path={Paths.CHANGE_PASSWORD} element={<Auth />} />
             <Route path='*' element={<NotFoundPage />} />
         </Route>
+        <Route path={Paths.ERROR} element={<Error />} />
+        <Route path={Paths.ERROR_EMAIL_NO_EXIST} element={<RecoveryCode />} />
+        <Route path={Paths.ERROR_LOGIN} element={<RecoveryAccount />} />
         <Route path={Paths.RESULT} element={<MainPage />}>
             <Route path={Paths.SUCCESS} element={<MainPage />} />
             <Route path={Paths.SUCCESS_PASSWORD} element={<MainPage />} />
-            <Route path={Paths.ERROR} element={<MainPage />} />
+            <Route path={Paths.ERROR} element={<Error />} />
             <Route path={Paths.ERROR_USER_EXIST} element={<MainPage />} />
-            <Route path={Paths.ERROR_EMAIL_NO_EXIST} element={<MainPage />} />
+
             <Route path={Paths.ERROR_EMAIL_CHECK} element={<MainPage />} />
             <Route path={Paths.ERROR_PASSWORD} element={<PasswordRecovery />} />
-            <Route path={Paths.ERROR_LOGIN} element={<MainPage />} />
+
             <Route path='*' element={<NotFoundPage />} />
         </Route>
         <Route path='*' element={<NotFoundPage />} />

@@ -1,0 +1,32 @@
+@import '@constants/style/var';
+@import '@constants/style/mixins';
+
+.recovery {
+    border-radius: 2px;
+    padding: 64px 32px 56px 32px;
+    width: 539px;
+    height: 428px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    background: $character-light-primary-inverse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .numbers {
+        max-width: 300px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        .input-number {
+            border: 1px solid $character-light-border;
+            border-radius: 2px;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
