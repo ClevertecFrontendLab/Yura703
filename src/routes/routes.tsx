@@ -5,10 +5,19 @@ import { NotFoundPage } from "@pages/not-found-page";
 import { MainPage } from "@pages/main-page";
 import { Auth } from "@pages/auth";
 import { PasswordRecovery } from "@pages/password-recovery";
-import { Error } from "@pages/error";
+import { InfoWindow } from "@pages/info-window";
 import { RecoveryCode } from "@components/recovery-code";
 import { RecoveryAccount } from "@components/recovery-account";
 import { ErrorWindow } from "@components/error-window";
+import { CheckCircleFilled, CloseCircleFilled } from "@ant-design/icons";
+import { DATA_NOT_SAVED, EMAIL_ALREADY_EXIST, REGISTARATION_SUCCESSFUL } from "@constants/info-message";
+
+interface InfoMessage  {
+    icon: React.JSX.Element,
+    title: string,
+    message: string,
+    buttonContent: string,
+}
 
 export const routes = (
     <Routes>
@@ -32,14 +41,15 @@ export const routes = (
             <Route path={Paths.CHANGE_PASSWORD} element={<Auth />} />
             <Route path='*' element={<NotFoundPage />} />
         </Route>
-        <Route path={Paths.ERROR} element={<Error />} />
+        <Route path={Paths.ERROR} element={<InfoWindow {...DATA_NOT_SAVED} />} />
         <Route path={Paths.ERROR_EMAIL_NO_EXIST} element={<RecoveryCode />} />
         <Route path={Paths.ERROR_LOGIN} element={<RecoveryAccount />} />
-        <Route path={Paths.ERROR_USER_EXIST} element={<ErrorWindow />} />
+        <Route path={Paths.ERROR_USER_EXIST} element={<InfoWindow {...EMAIL_ALREADY_EXIST} />} />
+        <Route path={Paths.SUCCESS} element={<InfoWindow {...REGISTARATION_SUCCESSFUL} />} />
         <Route path={Paths.RESULT} element={<MainPage />}>
-            <Route path={Paths.SUCCESS} element={<MainPage />} />
+
             <Route path={Paths.SUCCESS_PASSWORD} element={<MainPage />} />
-            <Route path={Paths.ERROR} element={<Error />} />
+            <Route path={Paths.ERROR} element={<InfoWindow {...DATA_NOT_SAVED} />} />
             <Route path={Paths.ERROR_EMAIL_CHECK} element={<MainPage />} />
             <Route path={Paths.ERROR_PASSWORD} element={<PasswordRecovery />} />
 

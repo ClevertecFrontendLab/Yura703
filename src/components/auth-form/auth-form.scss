@@ -27,4 +27,17 @@
     .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before  {
         background-color: white;
     }
+
+    .ant-form-item-explain-error, .ant-form-item-explain-success {
+        text-align: start;
+        font-size: 13px;
+    }
+
+    .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+        border-left: 1px solid #d9d9d9;
+    }
+
+    .ant-input-group-wrapper-status-error .ant-input-group-addon {
+        color: $character-light-title-85;
+    }
 }
