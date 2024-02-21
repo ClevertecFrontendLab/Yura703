@@ -1,5 +1,5 @@
 import { CheckCircleFilled, CloseCircleFilled, WarningFilled } from "@ant-design/icons"
-import { InfoMessage } from "@types/component-types";
+import { InfoMessage } from "../types";
 
 export const LOGIN_FAILED: InfoMessage = {
     icon: <WarningFilled style={{ fontSize: '5em', color: '#d89614' }} />,

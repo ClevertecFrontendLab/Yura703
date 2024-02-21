@@ -9,25 +9,26 @@ import useForm from 'antd/lib/form/hooks/useForm';
 import authRequest, { user } from '@utils/request/auth';
 
 import { history } from '@redux/configure-store';
+import { useAppDispatch, useAppSelector } from '@hooks/typed-react-redux-hooks';
+import { showLoader } from '@redux/slice/authSlice';
+import { validateEmailRegExp, validatePasswordRegExp } from '@utils/validate';
+
 
 const registrationUser = authRequest.registrationUser;
 const authenticationUser = authRequest.authenticationUser;
-
-const options = [
-    { label: 'Вход', value: 'input' },
-    { label: 'Регистрация', value: 'registration' },
-];
-
-const validateEmailRegExp = new RegExp(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/);
-const validatePasswordRegExp = new RegExp(/(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{8,}/g);
 
 ConfigProvider.config({ theme: { primaryColor: '#2f54eb' } });
 
 export const AuthForm: React.FC = () => {
     const [isDisabled, setIsDisabled] = useState(false);
     const [isRegistration, setIsRegistration] = useState(false);
-
     const [form] = useForm();
+
+    const dispatch = useAppDispatch();
+    console.log('state=', useAppSelector((state) => state.auth.isLoader));
+    dispatch(showLoader());
+    console.log('state=', useAppSelector((state) => state.auth.isLoader));
+
 
     const values = Form.useWatch([], form);
 
@@ -65,6 +66,7 @@ export const AuthForm: React.FC = () => {
             console.log(code);
             console.log(history);
 
+            //export { useAppDispatch, useAppSelector } from './typed-react-redux-hooks';
 
         } else await authenticationUser({ email, password });
     };
@@ -73,7 +75,10 @@ export const AuthForm: React.FC = () => {
         <ConfigProvider >
             <div className='form'>
                 <Radio.Group
-                    options={options}
+                    options={[
+                        { label: 'Вход', value: 'input' },
+                        { label: 'Регистрация', value: 'registration' },
+                    ]}
                     onChange={onChangeRegistration}
                     optionType="button"
                     defaultValue={'input'}

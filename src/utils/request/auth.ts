@@ -1,43 +1,12 @@
-// import { IBoard, IErrorResponse } from 'types/Interfaces';
-// import request from './request';
-// import { URL } from '../../utils/constants';
-
+import { AUTH_URL, BASE_URL } from "@constants/path";
+import { ConfirmPassw, User } from "../../types";
 import axios, { AxiosError } from "axios";
-
-const BASE_URL = 'https://marathon-api.clevertec.ru';
-
-enum auth_url {
-    get = '/auth/google',
-    post_login = '/auth/login',
-    post_registration = '/auth/registration',
-    post_check_email = '/auth/check-email',
-    post_confirm_email = '/auth/confirm-email',
-    post_change_password = '/auth/change-password',
-}
-
-type errorResponses = {
-    "statusCode": number,
-    "error": string,
-    "message": string
-}
-
-export type user = {
-    email: string,
-    password: string,
-}
-
-type confirmPassw = {
-    email: string,
-    code: string,
-    confirmPassword: string,
-}
-
 // -H 'accept: application/json' \
 // -H 'Content-Type: application/json' \
 
 const getGoogleAuth = async () => {
     try {
-        const response = await axios.get(BASE_URL + auth_url.get);
+        const response = await axios.get(BASE_URL + AUTH_URL.get);
         //const accessToken = response.accessToken;
 
         return response.data
@@ -48,9 +17,9 @@ const getGoogleAuth = async () => {
     }
 };
 
-const authenticationUser = async (user: user) => {
+const authenticationUser = async (user: User) => {
     try {
-      const response = await axios.post(BASE_URL + auth_url.post_login, user);
+      const response = await axios.post(BASE_URL + AUTH_URL.post_login, user);
       console.log(response.data);
 
       return response.data;
@@ -61,9 +30,9 @@ const authenticationUser = async (user: user) => {
     }
 }
 
-const registrationUser = async (user: user) => {
+const registrationUser = async (user: User) => {
     try {
-      const response = await axios.post(BASE_URL + auth_url.post_registration, user);
+      const response = await axios.post(BASE_URL + AUTH_URL.post_registration, user);
 
       return response.status;
     } catch (error) {
@@ -73,7 +42,7 @@ const registrationUser = async (user: user) => {
 
 const checkEmail = async (email: string) => {
     try {
-      const response = await axios.post(BASE_URL + auth_url.post_check_email, email)
+      const response = await axios.post(BASE_URL + AUTH_URL.post_check_email, email)
       return response.data
     } catch (error: unknown) {
         if (error instanceof Error) {
@@ -82,9 +51,9 @@ const checkEmail = async (email: string) => {
     }
 }
 
-const confirmEmail = async (passwordData: Omit<confirmPassw, 'confirmPassword'>) => {
+const confirmEmail = async (passwordData: Omit<ConfirmPassw, 'confirmPassword'>) => {
     try {
-      const response = await axios.post(BASE_URL + auth_url.post_confirm_email, passwordData)
+      const response = await axios.post(BASE_URL + AUTH_URL.post_confirm_email, passwordData)
       return response.data
     } catch (error: unknown) {
         if (error instanceof Error) {
@@ -93,9 +62,9 @@ const confirmEmail = async (passwordData: Omit<confirmPassw, 'confirmPassword'>)
     }
 }
 
-const changePassword = async (passwordData: Omit<confirmPassw, 'code'>) => {
+const changePassword = async (passwordData: Omit<ConfirmPassw, 'code'>) => {
     try {
-      const response = await axios.post(BASE_URL + auth_url.post_change_password, passwordData)
+      const response = await axios.post(BASE_URL + AUTH_URL.post_change_password, passwordData)
       return response.data
     } catch (error: unknown) {
         if (error instanceof Error) {

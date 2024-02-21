@@ -1,6 +1,7 @@
-export const Paths = {
-    MAIN: '/main',
+export const BASE_URL = 'https://marathon-api.clevertec.ru';
 
+export const PATH = {
+    MAIN: '/main',
     AUTH: '/auth',
     REGISTRATION: '/auth/registration',//TODO 'registration'
     CONFIRM_EMAIL: '/auth/confirm-email',
@@ -15,4 +16,13 @@ export const Paths = {
     ERROR_EMAIL_CHECK: '/result/error-check-email',
     ERROR_PASSWORD: '/result/error-change-password',
     ERROR_LOGIN: '/result/error-login',
+}
+
+export enum AUTH_URL {
+    get = '/auth/google',
+    post_login = '/auth/login',
+    post_registration = '/auth/registration',
+    post_check_email = '/auth/check-email',
+    post_confirm_email = '/auth/confirm-email',
+    post_change_password = '/auth/change-password',
 }
